@@ -1,15 +1,34 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## return a list of functions to 1) set the matrix; 2) get the matrix; 3) set the inverse; and 4) get the inverse
+## this list to be used as an input to casheSolve()
 
 makeCacheMatrix <- function(x = matrix()) {
-
+        i <- NULL
+        set <- function(y) {
+                x <<- y
+                i <<- NULL
+        }
+        get = function() x
+        setinverse <- function(i) i <<- inverse
+        getinverse <- function() i
+        list (set=set, get=get, setmean = setmean, getmean =bgetmean)
 }
 
 
-## Write a short comment describing this function
+## return the inverse of the input matrix 
 
 cacheSolve <- function(x, ...) {
+        inv = x$getinverse
+        
+        if (!is.null(i)) {
+                return(i)
+        }
         ## Return a matrix that is the inverse of 'x'
+        
+        input_mat <- x$get()
+        i <- solve(mat, ...)
+        x$setinverse(i)
+        print(i)
 }
